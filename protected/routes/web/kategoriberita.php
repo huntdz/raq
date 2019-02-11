@@ -1,0 +1,31 @@
+<?php
+
+Route::group(['prefix' => 'administrator/ketegori-berita','middleware' => 'auth'], function () {
+	Route::get('/',[
+		'as'=>'administrator.ketegori-berita.list',
+		'uses'=>'KategoriPostController@getView']);
+	Route::get('/create',[
+		'as'=>'administrator.ketegori-berita.create',
+		'uses'=>'KategoriPostController@getCreate']);
+	Route::post('/create',[
+		'as'=>'administrator.ketegori-berita.create',
+		'uses'=>'KategoriPostController@postCreate']);
+	Route::get('/edit/{id}',[
+		'as'=>'administrator.ketegori-berita.edit',
+		'uses'=>'KategoriPostController@getEdit']);
+	Route::post('/edit/{id}',[
+		'as'=>'administrator.ketegori-berita.edit',
+		'uses'=>'KategoriPostController@getPost']);
+	Route::delete('/hapus/{id}',[
+		'as'=>'administrator.ketegori-berita.hapus',
+		'uses'=>'KategoriPostController@getDelete']);
+	Route::delete('/hapusall/{id}',[
+		'as'=>'administrator.ketegori-berita.hapusall',
+		'uses'=>'KategoriPostController@getDeleteAny']);
+	Route::get('/activeall/{id}',[
+		'as'=>'administrator.ketegori-berita.activeall',
+		'uses'=>'KategoriPostController@getActiveAll']);
+	Route::get('/deactiveall/{id}',[
+		'as'=>'administrator.ketegori-berita.deactiveall',
+		'uses'=>'KategoriPostController@getDeactiveAll']);
+});
