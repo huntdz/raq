@@ -10,7 +10,12 @@
 		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/toastr.min.css') }}">
 	</head>
 	<body>
-	<div class="login"> 
+	<div class="login">
+		<div class="login-logo">
+		<a href="{{URL('/')}}">	
+		 <img src = "{{asset('images/logo-hijau.png')}}">
+		 </a> 
+		</div> 
 	    <h1>Login Here</h1>
 		<form method="post" action="{{ route('login') }}">
 		 {{ csrf_field() }}
@@ -23,7 +28,7 @@
 			<input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
 		  </div>
 		  <button type="submit" class="btn btn-primary">Login</button>
-		  <small id="emailHelp" class="form-text text-muted" style="text-align:center">©domain. All rights reserved.</small>
+		  <small id="emailHelp" class="form-text text-muted" style="text-align:center">©rumahaqiqohkamil.com. All rights reserved.</small>
 		</form>
 	</div>
 	<script src="{{ asset('assets/js/jquery-2.1.1.js') }}"></script>
